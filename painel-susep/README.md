@@ -8,6 +8,7 @@
 
 ###### Trata-se de um painel de dados com o overview do mercado segurador a partir de dados obtidos junto à SUSEP.
 ###### A SUSEP é entidade reguladora do mercado de seguros no Brasil, abragendo a supervisão dos ramos relacionados à seguros, além de previdência e capitalização. Para fins de simplificaçãp, uma vez que são operações diferentes, o painel é focado apenas nos ramos de seguros.
+###### Ao final desse documento, haverá um vídeo básico explorando o painel pronto e as funcionalidades.
 
 > Perguntas de negócios
 
@@ -17,6 +18,11 @@
 ###### 3) Quais os principais ramos do mercado segurador em tamanho de prêmios;
 ###### 4) Quais ramos possuem relação de custos elevadas e seu tamanho em prêmios.
 
+> Definições de termos sobre o mercado segurador de forma amigável
 
+###### Prêmios = valores pagos à seguradora pelos clientes referente a suas apólices de seguros
+###### Sinistros = valores de sinistros pagos pela seguradora aos clientes quando há ocorrência do risco que foi segurado na apólice.
+###### Despesas comerciais = valores gastos pelas companhias para comercialização de seguros (ex.: pagamento de comissão aos corretores de seguros, intermediários que fazem a venda efetiva de alguns tipos de seguro)
+###### Sinistralidade = é um indicador que mostra a relação entre os valores gastos em sinistros e o valor em prêmios ganhos (sinistros ocorridos/prêmios ganhos)
 
 
