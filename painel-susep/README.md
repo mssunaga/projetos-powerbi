@@ -26,3 +26,9 @@
 ###### Sinistralidade = é um indicador que mostra a relação entre os valores gastos em sinistros e o valor em prêmios ganhos (sinistros ocorridos/prêmios ganhos)
 
 
+> Visualização do painel em vídeo
+
+https://user-images.githubusercontent.com/116302387/202877918-2be747a6-54fc-480c-b31f-b827e07eeecc.mp4
+
+
+
