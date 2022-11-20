@@ -46,6 +46,8 @@
 [cp-no-13-quadro-de-sugestoes.xlsx](https://github.com/mssunaga/projetos-powerbi/files/10048271/cp-no-13-quadro-de-sugestoes.xlsx)
 
 
+##### Sobre grupos econômicos (companhias):
+
 #
 #### Visualização do painel em vídeo
 
