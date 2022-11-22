@@ -68,9 +68,11 @@ ADDCOLUMNS(
     "nome_mes", FORMAT([Date],"mmmm")
 )
 ###### Para criação dos gráficos de evolução de prêmios e sinistros, foram necessárias algumas medidas para o funcionamento da proposta de ter barras com os valores do ano e YTD variável.
-###### Exemplo abaixo em relação aos valores de prêmios (mesma lógica aplicada para valores de sinistros)
-###### Para manter o ano fixo, temos a medida: total_premio_fixo = CALCULATE(SUM(base_susep_geral[premio_emitido2]),ALL(Calendario[Date].[Mês])), permitindo manter os valores independente do filtro de mês. 
-###### Para calcular a linha de variação percentual, temos a medida: crescimento_premios = 
+###### Exemplos abaixo em relação aos valores de prêmios (mesma lógica aplicada para valores de sinistros)
+###### Para manter o ano fixo, temos a medida: 
+total_premio_fixo = CALCULATE(SUM(base_susep_geral[premio_emitido2]),ALL(Calendario[Date].[Mês])), permitindo manter os valores independente do filtro de mês. 
+###### Para calcular a linha de variação percentual, temos a medida: 
+crescimento_premios = 
 VAR premiolastyear =
     CALCULATE([total_premio],DATEADD(Calendario[Date],-1,YEAR))
 RETURN
