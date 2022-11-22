@@ -33,7 +33,9 @@
 ###### Trata-se de uma base compactada em um arquivo .zip com diversos arquivos .csv. A documentação explicando cada coluna de cada arquivo se encontra no mesmo site também.
 
 > Modelagem dos dados
-###### A partir da documentação e visualização das tabelas, foi possível identificar a possibilidade de montar um modelo star schema em algum banco de dados ou até mesmo no PowerBI, uma vez que há um arquivo com os valores de prêmios e sinistros geral chamado Ses_seguros.csv, sendo uma tabela fato com as chaves necessárias para trazer as demais informações de outras tabelas como ramos, nome das cias ou divisão geográfica. No entanto, houve a necessidade de tratar ramos e cias, então todo o tratamento foi feito diretamente em Python e automatizado para gerar uma base final tratada e com todos os joins necessários. Essa base única tratada é upada no PowerBI para alimentar o painel.
+###### A partir da documentação e visualização das tabelas, foi possível identificar na estrutura a possibilidade de montar um modelo star schema diretamente, uma vez que há um arquivo com os valores de prêmios e sinistros geral chamado Ses_seguros.csv, sendo uma tabela fato com as chaves necessárias para trazer as demais informações de outras tabelas como ramos, nome das cias ou divisão geográfica (Não utilizada aqui). No entanto, houve a necessidade de tratar ramos e cias, então todo o tratamento foi feito diretamente em Python e automatizado para gerar uma base final tratada e com todos os joins necessários. Essa base única tratada é upada no PowerBI para alimentar o painel.
+###### Simplificação visual das tabelas abaixo:
+![Estrutura tabelas - Simplificação visual](https://user-images.githubusercontent.com/116302387/203181986-75b11e1b-56cf-47b6-8c68-b1b2d834aeb4.PNG)
 
 > Tratamento dos dados
 ###### O tratamento dos dados principal consiste em fazer o join entre a base principal e as bases de ramos e nomes da companhias para posteriormente ajustá-los. O processo está disponível no arquivo susep.py nesta mesma pasta e comentado. Além disso, alguns outros detalhes como renomear colunas, ajustar datas e limpar colunas desnecessárias também estão nesta parte do processo.
@@ -47,8 +49,12 @@
 
 
 ##### Sobre grupos econômicos (companhias):
+###### A tabela de grupos econômicos precisou de 2 ajustes;
+###### 1) Correção de espaços gerados por caracteres que excederam a célula, por exemplo: 
+![Correção GEs](https://user-images.githubusercontent.com/116302387/203184327-1833aa5f-2996-44e5-9adf-c21d2cadcfa1.PNG)
 
-#
+
+
 #### Visualização do painel em vídeo
 
 https://user-images.githubusercontent.com/116302387/202878040-da34e735-4a33-4ab2-9a53-09770cfe33e4.mp4
