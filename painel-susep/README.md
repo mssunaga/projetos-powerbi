@@ -46,12 +46,17 @@
 ###### Trata-se de uma base com nível de agregação de ramos detalhado, sem agrupamento macro. Para agrupamento macro, foi (e é sempre) necessário atualizar de acordo com a última codificação atualizada e publicada em circular da SUSEP disponível [aqui](https://www.gov.br/susep/pt-br/documentos-e-publicacoes/normativos/pasta-de-normas-em-consulta-publica/consultas-publicas-passadas)
 ###### Neste projeto, foi utilizada essa última consulta pública (A tabela com a codificação proposta está ao final do arquivo)
 [cp-no-13-quadro-de-sugestoes.xlsx](https://github.com/mssunaga/projetos-powerbi/files/10048271/cp-no-13-quadro-de-sugestoes.xlsx)
+###### Resultado na coluna 'grupo', exemplo abaixo:
+![Ramos macro](https://user-images.githubusercontent.com/116302387/203199155-40aeb5ab-aa12-4787-9cd1-ca7dd308db53.PNG)
 
 
 ##### Sobre grupos econômicos (companhias):
 ###### A tabela de grupos econômicos precisou de 2 ajustes;
 ###### 1) Correção de espaços gerados por caracteres que excederam a célula, por exemplo: 
 ![Correção GEs](https://user-images.githubusercontent.com/116302387/203184327-1833aa5f-2996-44e5-9adf-c21d2cadcfa1.PNG)
+
+###### 2) Agrupamento das companhias, por exemplo: 
+![Agrupamento GEs](https://user-images.githubusercontent.com/116302387/203198912-62f533a7-8e4b-42df-a528-4b14610add15.PNG)
 
 
 
