@@ -58,10 +58,31 @@
 ###### 2) Agrupamento das companhias, por exemplo: 
 ![Agrupamento GEs](https://user-images.githubusercontent.com/116302387/203198912-62f533a7-8e4b-42df-a528-4b14610add15.PNG)
 
+> Estruturação no PowerBI
+###### O primeiro passo foi a criação da tabela calendário.
+Calendario = 
+ADDCOLUMNS(
+    CALENDARAUTO(),
+    "ano", YEAR([Date]),
+    "mês", MONTH([Date]),
+    "nome_mes", FORMAT([Date],"mmmm")
+)
+###### Para criação dos gráficos de evolução de prêmios e sinistros, foram necessárias algumas medidas para o funcionamento da proposta de ter barras com os valores do ano e YTD variável.
+###### Exemplo abaixo em relação aos valores de prêmios (mesma lógica aplicada para valores de sinistros)
+###### Para manter o ano fixo, temos a medida: total_premio_fixo = CALCULATE(SUM(base_susep_geral[premio_emitido2]),ALL(Calendario[Date].[Mês])), permitindo manter os valores independente do filtro de mês. 
+###### Para calcular a linha de variação percentual, temos a medida: crescimento_premios = 
+VAR premiolastyear =
+    CALCULATE([total_premio],DATEADD(Calendario[Date],-1,YEAR))
+RETURN
+    DIVIDE([total_premio]-premiolastyear,premiolastyear)
+
+###### Para criação dos textos variáveis, foram criadas medidas simples de identificação de maior e menor mês para aplicar em medidas de texto concatenando os textos + as medidas de maior e menor, respondendo às filtragens do relatório.
+
+###### Para criação do box de informação com a lógica de abrir e fechar, foi utilizada a técnica de indicadores e seleção.
 
 
-#### Visualização do painel em vídeo
-
+#### Visualização final do painel em vídeo
+###### Vídeo comprimido em clideo.com para adequar ao documento.
 https://user-images.githubusercontent.com/116302387/202878040-da34e735-4a33-4ab2-9a53-09770cfe33e4.mp4
 
 
