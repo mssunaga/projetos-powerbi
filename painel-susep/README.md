@@ -90,7 +90,21 @@ RETURN
 https://user-images.githubusercontent.com/116302387/202878040-da34e735-4a33-4ab2-9a53-09770cfe33e4.mp4
 
 
-#### Validações dos valores gerados
+#### Algumas validações dos valores gerados
+
+##### Validação de prêmios e sinistros com a SUSEP:
+###### Valores no painel para dois anos em tabela:
+![Premios e Sinistro - Tabela painel](https://user-images.githubusercontent.com/116302387/205057060-6a00accf-e78e-4e67-a51f-07e2879b5f53.PNG)
+###### Valores na consulta no SES SUSEP [aqui](https://www2.susep.gov.br/menuestatistica/SES/premiosesinistros.aspx?id=54):
+![Ses - Premios e Sinistros](https://user-images.githubusercontent.com/116302387/205057304-a3c892e7-96b0-451c-9807-9ffe9a9c8026.PNG)
+
+##### Validação pela receita da Porto Seguro no ramo de Automóvel (fácilmente identificável e comparável):
+###### Ano fechado de 2021, de acordo com a apresentação institucional no site de RI da cia, pg.10 [aqui](https://api.mziq.com/mzfilemanager/v2/d/b77a3922-d280-4451-b3ee-0afec4577834/f7aae034-ca90-fb3d-7f58-d149b61735f1?origin=1)
+
+###### Painel:
+![Receita porto](https://user-images.githubusercontent.com/116302387/205058809-90a8cbc4-1bf2-4e78-bef4-83cf8f9ab138.PNG)
+###### Apresentação institicional Porto Seguro - RI:
+![Receita porto RI](https://user-images.githubusercontent.com/116302387/205058903-84b858b6-d935-486f-99a2-b2e1b1005521.PNG)
 
 
 
