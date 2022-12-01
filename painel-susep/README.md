@@ -3,12 +3,12 @@
 #### Objetivo geral
 
 ###### Este painel foi desenvolvido com a intenção de aprimorar minhas habilidades pessoais/profissionais com as ferramentas PowerBI e Python, utilizando dados reais e respondendo a algumas perguntas de negócios sobre o setor escolhido, permitindo uma melhor experiência com tratamento de dados, regras de setor e possibilidade de validação real dos resultados.
+
 #
 #### Sobre
 
-###### Trata-se de um painel de dados com o overview do mercado segurador a partir de dados obtidos junto à SUSEP.
-###### A SUSEP é entidade reguladora do mercado de seguros no Brasil, abragendo a supervisão dos ramos relacionados à seguros, além de previdência e capitalização. Para fins de simplificaçãp, uma vez que são operações diferentes, o painel é focado apenas nos ramos de seguros.
-###### Ao final desse documento, haverá um vídeo básico explorando o painel pronto e as funcionalidades.
+###### O painel apresenta um overview do mercado segurador no Brasil a partir de dados obtidos junto à SUSEP. A SUSEP é entidade reguladora do mercado de seguros, abragendo a supervisão dos ramos relacionados à seguros, além de previdência e capitalização.
+
 #
 #### Perguntas de negócios
 
@@ -16,14 +16,15 @@
 ###### 1) Como é a evolução de prêmios e sinistros nesse mercado em visões anuais e YTD, permitindo filtragem;
 ###### 2) Quais os principais players (grupos econômicos) do mercado (mkt share, prêmios);
 ###### 3) Quais os principais ramos do mercado segurador em tamanho de prêmios;
-###### 4) Quais ramos possuem relação de custos elevadas e seu tamanho em prêmios.
-#
-#### Definições de termos sobre o mercado segurador de forma amigável
+###### 4) Quais ramos possuem relação de custos elevadas e o tamanho de mercado do ramo em questão a partir da visão prêmios.
 
-###### Prêmios = valores pagos à seguradora pelos clientes referente a suas apólices de seguros
+#
+#### Definições básicas de termos sobre o mercado segurador 
+
+###### Prêmios = valores pagos à seguradora pelos clientes referente a suas apólices de seguros.
 ###### Sinistros = valores de sinistros pagos pela seguradora aos clientes quando há ocorrência do risco que foi segurado na apólice.
-###### Despesas comerciais = valores gastos pelas companhias para comercialização de seguros (ex.: pagamento de comissão aos corretores de seguros, intermediários que fazem a venda efetiva de alguns tipos de seguro)
-###### Sinistralidade = é um indicador que mostra a relação entre os valores gastos em sinistros e o valor em prêmios ganhos (sinistros ocorridos/prêmios ganhos)
+###### Despesas comerciais = valores gastos pelas companhias para comercialização de seguros. (ex.: pagamento de comissão aos corretores de seguros, intermediários que fazem a venda efetiva de alguns tipos de seguro)
+###### Sinistralidade = é um indicador que mostra a relação entre os valores gastos em sinistros e o valor em prêmios ganhos. (sinistros ocorridos/prêmios ganhos)
 
 #
 #### Dados e tratamento
@@ -31,6 +32,7 @@
 > Fonte de dados
 ###### A fonte primária de dados é a base do SES disponível no site da SUSEP [aqui](http://www2.susep.gov.br/menuestatistica/ses/principal.aspx)
 ###### Trata-se de uma base compactada em um arquivo .zip com diversos arquivos .csv. A documentação explicando cada coluna de cada arquivo se encontra no mesmo site também.
+###### Os dados possuem um histórico longo, mas a partir de 2014 houve mudança no conceito de prêmios, então o período escolhido para o painel foi a partir de 2014. Os dados estão atualizados até 08/2022, última data disponível enquanto a criação do painel foi realizada. Uma vez que houver atualização, o processo está estruturado para tratar os dados automaticamente e a documentação permite a memória de ajustes necessários que estiverem fora do processo automático.
 
 > Modelagem dos dados
 ###### A partir da documentação e visualização das tabelas, foi possível identificar na estrutura a possibilidade de montar um modelo star schema diretamente, uma vez que há um arquivo com os valores de prêmios e sinistros geral chamado Ses_seguros.csv, sendo uma tabela fato com as chaves necessárias para trazer as demais informações de outras tabelas como ramos, nome das cias ou divisão geográfica (Não utilizada aqui). No entanto, houve a necessidade de tratar ramos e cias, então todo o tratamento foi feito diretamente em Python e automatizado para gerar uma base final tratada e com todos os joins necessários. Essa base única tratada é upada no PowerBI para alimentar o painel.
@@ -58,7 +60,7 @@
 ###### 2) Agrupamento das companhias, por exemplo: 
 ![Agrupamento GEs](https://user-images.githubusercontent.com/116302387/203198912-62f533a7-8e4b-42df-a528-4b14610add15.PNG)
 
-> Estruturação no PowerBI
+> Estruturação no PowerBI - Passos básicos e essenciais
 ###### O primeiro passo foi a criação da tabela calendário.
 Calendario = 
 ADDCOLUMNS(
@@ -70,7 +72,7 @@ ADDCOLUMNS(
 ###### Para criação dos gráficos de evolução de prêmios e sinistros, foram necessárias algumas medidas para o funcionamento da proposta de ter barras com os valores do ano e YTD variável.
 ###### Exemplos abaixo em relação aos valores de prêmios (mesma lógica aplicada para valores de sinistros)
 ###### Para manter o ano fixo, temos a medida: 
-total_premio_fixo = CALCULATE(SUM(base_susep_geral[premio_emitido2]),ALL(Calendario[Date].[Mês])), permitindo manter os valores independente do filtro de mês. 
+total_premio_fixo = CALCULATE(SUM(base_susep_geral[premio_emitido2]),ALL(Calendario[Date].[Mês])) 
 ###### Para calcular a linha de variação percentual, temos a medida: 
 crescimento_premios = 
 VAR premiolastyear =
@@ -86,6 +88,10 @@ RETURN
 #### Visualização final do painel em vídeo
 ###### Vídeo comprimido em clideo.com para adequar ao documento.
 https://user-images.githubusercontent.com/116302387/202878040-da34e735-4a33-4ab2-9a53-09770cfe33e4.mp4
+
+
+#### Validações dos valores gerados
+
 
 
 
